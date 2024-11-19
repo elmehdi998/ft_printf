@@ -6,13 +6,13 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:57:52 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 11:58:16 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:34:17 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int	ft_writeu( int nb)
+static int	ft_writeu(unsigned int nb)
 {
 	char	*hex;
 	int		count;
@@ -22,21 +22,12 @@ static int	ft_writeu( int nb)
 	return (count);
 }
 
-int	ft_putnbrhexu(int nb)
+int	ft_putnbrhexu(unsigned  int nb)
 {
 	int	count;
 
 	count = 0;
-	if (nb < 0)
-	{
-		if (nb == -2147483648)
-		{
-			count = write(1, "-80000000", 9);
-			return (count);
-		}
-		count += write(1, "-", 1);
-		nb = -nb;
-	}
+	
 	if (nb >= 16)
 		count += ft_putnbrhexu(nb / 16);
 	count += ft_writeu(nb);
