@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putper.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 19:13:09 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 10:31:15 by een-nasi         ###   ########.fr       */
+/*   Created: 2024/11/18 19:13:03 by een-nasi          #+#    #+#             */
+/*   Updated: 2024/11/19 10:24:27 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_putstr(char *str)
+int	ft_putper(void)
 {
-	int	count;
-	int	i;
-
-	i = 0;
-	count = 0;
-	if (str == NULL)
-		return (write(1, "(null)", 6));
-	while (str[i])
-		i++;
-	return (write(1,str,i));
+	return (write(1, '%', 1));
 }

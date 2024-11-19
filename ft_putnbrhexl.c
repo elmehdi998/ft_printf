@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putadress.c                                     :+:      :+:    :+:   */
+/*   ft_putnbrhexl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 09:47:26 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 10:36:08 by een-nasi         ###   ########.fr       */
+/*   Created: 2024/11/18 20:40:11 by een-nasi          #+#    #+#             */
+/*   Updated: 2024/11/19 11:57:46 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int	ft_writea(unsigned long nb)
+static int	ft_writel( int nb)
 {
 	char	*hex;
 	int		count;
@@ -22,28 +22,23 @@ static int	ft_writea(unsigned long nb)
 	return (count);
 }
 
-static int	ft_tohex(unsigned long nb)
+int	ft_putnbrhexl(int nb)
 {
 	int	count;
 
 	count = 0;
-	if (nb >= 16)
-		count += ft_tohex(nb / 16);
-	count += ft_writea(nb);
-	return (count);
-}
-
-int	ft_putadress(void *adress)
-{
-	int	count;
-
-	count = 0;
-	if (!adress)
+	if (nb < 0)
 	{
-		count += write(1, "(nil)", 5);
-		return (count);
+		if (nb == -2147483648)
+		{
+			count = write(1, "-80000000", 9);
+			return (count);
+		}
+		count += write(1, "-", 1);
+		nb = -nb;
 	}
-	count += write(1, "0x", 2);
-	count += ft_tohex((unsigned long)adress);
+	if (nb >= 16)
+		count += ft_putnbrhexl(nb / 16);
+	count += ft_writel(nb);
 	return (count);
 }

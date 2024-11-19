@@ -1,20 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 19:12:59 by een-nasi          #+#    #+#             */
+/*   Updated: 2024/11/19 10:09:10 by een-nasi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include<unistd.h>
-void ft_putnbr(int nb)
+#include <stdio.h>
+#include <unistd.h>
+
+int	ft_putnbr(int nb)
 {
-          int c;
-          if(nb<0)
-          {
-                    if(nb==-2147483648)
-                    {
-                              write(1, "-2147483648",11);
-                              return ;
-                    }
-                    write(1,"-",1);
-                    nb= -nb;
-          }
-          if(nb>9)
-                    ft_putnbr(nb/10);
-          c= nb%10 + 48;
-          write(1,&c,1);
+	int		count;
+	char	n;
+
+	count = 0;
+	if (nb < 0)
+	{
+		if (nb == -2147483648)
+		{
+			count = write(1, "-2147483648", 11);
+			return (count);
+		}
+		nb = -nb;
+		count += write(1, "-", 1);
+	}
+	if (nb > 9)
+		count += ft_putnbr(nb / 10);
+	n = nb % 10 + 48;
+	count += write(1, &n, 1);
+	return (count);
 }

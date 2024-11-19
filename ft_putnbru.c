@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbru.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 19:13:09 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 10:31:15 by een-nasi         ###   ########.fr       */
+/*   Created: 2024/11/18 19:12:49 by een-nasi          #+#    #+#             */
+/*   Updated: 2024/11/18 20:33:22 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_putstr(char *str)
+int	ft_putnbru(unsigned int nb)
 {
-	int	count;
-	int	i;
+	int		count;
+	char	c;
 
-	i = 0;
 	count = 0;
-	if (str == NULL)
-		return (write(1, "(null)", 6));
-	while (str[i])
-		i++;
-	return (write(1,str,i));
+	if (nb > 9)
+		count += ft_putnbru(nb / 10);
+	c = nb % 10 + 48;
+	count += write(1, &c, 1);
+	return (count);
 }

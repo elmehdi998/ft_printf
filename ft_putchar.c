@@ -1,6 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/18 19:12:54 by een-nasi          #+#    #+#             */
+/*   Updated: 2024/11/18 19:12:55 by een-nasi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include<unistd.h>
-void ft_putchar(char c)
+#include <unistd.h>
+
+int	ft_putchar(char c)
 {
-          write(1,&c,1);
+	int	count;
+
+	count = write(1, &c, 1);
+	return (count);
 }
