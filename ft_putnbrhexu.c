@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:57:52 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 14:34:17 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:54:45 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include"libftprinf.h"
 
 static int	ft_writeu(unsigned int nb)
 {

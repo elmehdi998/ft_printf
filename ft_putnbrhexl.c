@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:40:11 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 14:34:14 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:54:48 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include"libftprinf.h"
 
 static int	ft_writel( unsigned int nb)
 {

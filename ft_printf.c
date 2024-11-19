@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:38:55 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 14:45:00 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:55:11 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdarg.h>
+#include"libftprinf.h"
 
 
 
