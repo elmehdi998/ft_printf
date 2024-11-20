@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:13:09 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 14:54:39 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/20 11:19:56 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libftprinf.h"
+#include "libftprintf.h"
 
 int	ft_putstr(char *str)
 {
@@ -22,6 +22,9 @@ int	ft_putstr(char *str)
 	if (str == NULL)
 		return (write(1, "(null)", 6));
 	while (str[i])
+	{
+		count += (write(1, &str[i], 1));
 		i++;
-	return (write(1,str,i));
+	}
+	return (count);
 }

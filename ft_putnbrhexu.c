@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:57:52 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 14:54:45 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/20 11:10:13 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libftprinf.h"
+#include "libftprintf.h"
 
 static int	ft_writeu(unsigned int nb)
 {
@@ -22,20 +22,20 @@ static int	ft_writeu(unsigned int nb)
 	return (count);
 }
 
-int	ft_putnbrhexu(unsigned  int nb)
+int	ft_putnbrhexu(unsigned int nb)
 {
 	int	count;
 
 	count = 0;
-	
 	if (nb >= 16)
 		count += ft_putnbrhexu(nb / 16);
 	count += ft_writeu(nb);
 	return (count);
 }
-#include<stdio.h>
-int main()
-{
-	int nb = 6666;
-	printf("%d", ft_putnbrhexu(nb));
-}
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int nb = 6666;
+// 	printf("%d", ft_putnbrhexu(nb));
+// }

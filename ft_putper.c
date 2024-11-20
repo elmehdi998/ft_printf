@@ -6,14 +6,13 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:13:03 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 14:54:34 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/20 11:16:39 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include"libftprinf.h"
+#include "libftprintf.h"
 
 int	ft_putper(void)
 {
-	return (write(1, '%', 1));
+	return (write(1, "%", 1));
 }

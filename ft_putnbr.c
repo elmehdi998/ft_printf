@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:12:59 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/19 14:54:51 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/20 11:10:01 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libftprinf.h"
+#include "libftprintf.h"
 
 int	ft_putnbr(int nb)
 {
