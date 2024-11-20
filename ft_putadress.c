@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:47:26 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/20 11:10:42 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/20 16:33:27 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	ft_writea(unsigned long nb)
 {

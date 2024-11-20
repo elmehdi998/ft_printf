@@ -6,11 +6,11 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:13:09 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/20 11:19:56 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/20 16:34:17 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {
