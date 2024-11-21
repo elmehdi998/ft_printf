@@ -6,7 +6,7 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:12:59 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/20 16:33:46 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/21 14:21:41 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_putnbr(int nb)
 			return (count);
 		}
 		nb = -nb;
-		count += write(1, "-", 1);
+		count += ft_putchar('-');
 	}
 	if (nb > 9)
 		count += ft_putnbr(nb / 10);

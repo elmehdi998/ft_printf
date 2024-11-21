@@ -6,32 +6,32 @@
 /*   By: een-nasi <een-nasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:38:55 by een-nasi          #+#    #+#             */
-/*   Updated: 2024/11/20 16:33:38 by een-nasi         ###   ########.fr       */
+/*   Updated: 2024/11/21 14:59:07 by een-nasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_fill(va_list args, char str)
+static int	ft_fill(va_list args, char f)
 {
 	int	count;
 
 	count = 0;
-	if (str == 'c')
+	if (f == 'c')
 		count += ft_putchar(va_arg(args, int));
-	if (str == 's')
+	if (f == 's')
 		count += ft_putstr(va_arg(args, char *));
-	if (str == 'p')
+	if (f == 'p')
 		count += ft_putadress(va_arg(args, void *));
-	if (str == 'd' || str == 'i')
+	if (f == 'd' || f == 'i')
 		count += ft_putnbr(va_arg(args, int));
-	if (str == 'u')
+	if (f == 'u')
 		count += ft_putnbru(va_arg(args, unsigned int));
-	if (str == 'x')
+	if (f == 'x')
 		count += ft_putnbrhexl(va_arg(args, int));
-	if (str == 'X')
+	if (f == 'X')
 		count += ft_putnbrhexu(va_arg(args, int));
-	if (str == '%')
+	if (f == '%')
 	{
 		ft_putper();
 		count++;
@@ -39,7 +39,7 @@ static int	ft_fill(va_list args, char str)
 	return (count);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		count;
@@ -47,16 +47,18 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	count = 0;
-	va_start(args, str);
-	while (str[i])
+	va_start(args, format);
+	if (!format || (format[i] == '%' && format[i + 1] == '\0'))
+		return (-1);
+	while (format[i])
 	{
-		if (str[i] == '%' && str[i + 1] != '\0')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
-			count += ft_fill(args, str[i]);
+			count += ft_fill(args, format[i]);
 		}
 		else
-			count += write(1, &str[i], 1);
+			count += write(1, &format[i], 1);
 		i++;
 	}
 	va_end(args);
